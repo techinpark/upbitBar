@@ -8,20 +8,24 @@
 import Foundation
 
 @propertyWrapper
-struct UserInfo {
+struct UserInfo<T> {
     private let key: String
+    private let defaultValue: T
+
     
-    var wrappedValue: String {
-        get { UserDefaults.standard.string(forKey: key) ?? "" }
+    var wrappedValue: T {
+        get { return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue }
         set { UserDefaults.standard.set(newValue, forKey: key) }
     }
     
-    init(key: String) {
+    init(key: String, defaultValue: T) {
         self.key = key
+        self.defaultValue = defaultValue
     }
 }
 
 struct UPbitKeys {
-       @UserInfo(key: "accessToken") var accessToken: String
-       @UserInfo(key: "refreshToken") var refreshToken: String
+    @UserInfo(key: "accessToken", defaultValue: "") var accessToken: String
+    @UserInfo(key: "refreshToken", defaultValue: "") var refreshToken: String
+    @UserInfo(key: "refreshInterval", defaultValue: 5) var refershInterVal: Int
 }
