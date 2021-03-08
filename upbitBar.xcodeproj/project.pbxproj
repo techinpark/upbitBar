@@ -24,6 +24,7 @@
 		ED6E765A25F64BC5006387CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E765925F64BC5006387CA /* SnapKit */; };
 		ED6E772125F67802006387CA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E772025F67802006387CA /* UserInfo.swift */; };
 		ED6E772A25F6836E006387CA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E772925F6836E006387CA /* Notifications.swift */; };
+		ED6E772D25F689E0006387CA /* RefreshInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E772C25F689E0006387CA /* RefreshInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		ED6E765525F648E8006387CA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ED6E772025F67802006387CA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		ED6E772925F6836E006387CA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		ED6E772C25F689E0006387CA /* RefreshInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				ED6E759C25F52C45006387CA /* CryptoAsset.swift */,
 				ED6E75A925F5325A006387CA /* Ticker.swift */,
 				ED6E75AC25F54617006387CA /* Cryptocurrency.swift */,
+				ED6E772C25F689E0006387CA /* RefreshInterval.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			files = (
 				ED6E759D25F52C45006387CA /* CryptoAsset.swift in Sources */,
 				ED6E75AD25F54617006387CA /* Cryptocurrency.swift in Sources */,
+				ED6E772D25F689E0006387CA /* RefreshInterval.swift in Sources */,
 				ED6E765625F648E8006387CA /* SettingViewController.swift in Sources */,
 				ED6E772A25F6836E006387CA /* Notifications.swift in Sources */,
 				ED6E75AA25F5325A006387CA /* Ticker.swift in Sources */,

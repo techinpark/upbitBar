@@ -214,10 +214,9 @@ class SettingViewController: NSViewController {
             }
         }
         
-        print(refreshTimeCheckbox.titleOfSelectedItem)
-       
         keys.accessToken = accessToken
         keys.refreshToken = refreshToken
+        keys.refershInterVal = refreshTimeCheckbox.indexOfSelectedItem
         
         NotificationCenter.default.post(name: .neededRefresh, object: nil)
         NSApp.stopModal()

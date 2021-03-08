@@ -113,7 +113,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func setupRefreshTimer() {
         
-        let timeInterval = keys.refershInterVal
+        let refreshInterval = RefreshInterval(rawValue: keys.refershInterVal)
+        let timeInterval = refreshInterval?.minutes ?? 5
+        
         refreshTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval( timeInterval * 60),
                                             repeats: true,
                                             block: { [weak self] _ in
