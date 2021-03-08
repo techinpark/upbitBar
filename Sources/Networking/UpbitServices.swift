@@ -35,7 +35,6 @@ class UpbitServices {
                 return "Bearer \(bearer)"
             }
         } catch {
-            print(error)
             return nil
         }
         
@@ -55,6 +54,7 @@ class UpbitServices {
                 let result = try JSONDecoder().decode([CryptoAsset].self, from: jsonData)
                 return result
             } catch {
+                NotificationCenter.default.post(name: .neededTokenSetting, object: nil)
                 print(error)
                 return nil
             }

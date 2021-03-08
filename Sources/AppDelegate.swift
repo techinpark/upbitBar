@@ -14,8 +14,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private struct Consts {
         static let cryptoTags = 99
-        static let accessKeyFieldRect: NSRect = NSRect(x: 0, y: 10, width: 300, height: 20)
-        static let secretKeyFieldRect: NSRect = NSRect(x: 0, y: 30, width: 300, height: 20)
         
         static var cryptoAttributes: [NSAttributedString.Key: Any] {
             return [.font : NSFont.systemFont(ofSize: 12.0, weight: .light)]
@@ -23,6 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     private var statusItem: NSStatusItem?
+    private var refreshTimer: Timer?
+    private var keys = UPbitKeys()
     
     private let menu = NSMenu().then {
         $0.title = ""
@@ -51,8 +51,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidNeedTokenSetting(_:)), name: .neededTokenSetting, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidNeedRefresh(_:)), name: .neededRefresh, object: nil)
+        
         setupUI()
         getAllBalances()
+        setupRefreshTimer()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -73,14 +77,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     
+    @objc func onDidNeedTokenSetting(_ notification: Notification) {
+        self.showSettingAlert()
+    }
+    
+    @objc func onDidNeedRefresh(_ notification: Notification) {
+        self.refresh()
+    }
+    
     @objc func onRefreshTap() {
-        print("새로고침")
-        removeAllItems()
-        getAllBalances()
+        self.refresh()
     }
     
     @objc func onSettingTap() {
-        print("세팅")
         self.showSettingAlert()
     }
     
@@ -94,6 +103,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     // MARK: Private functions
+    
+    private func refresh() {
+        invalidateRefreshTimer()
+        removeAllItems()
+        getAllBalances()
+        setupRefreshTimer()
+    }
+    
+    private func setupRefreshTimer() {
+        
+        let timeInterval = keys.refershInterVal
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval( timeInterval * 60),
+                                            repeats: true,
+                                            block: { [weak self] _ in
+                                                guard let self = self else { return }
+                                                self.refresh()
+                                            })
+    }
+    
+    private func invalidateRefreshTimer() {
+            refreshTimer?.invalidate()
+        }
     
     private func showSettingAlert() {
         

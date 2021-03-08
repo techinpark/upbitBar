@@ -219,9 +219,8 @@ class SettingViewController: NSViewController {
         keys.accessToken = accessToken
         keys.refreshToken = refreshToken
         
-        
-        
-        //NSApp.stopModal()
+        NotificationCenter.default.post(name: .neededRefresh, object: nil)
+        NSApp.stopModal()
     }
     
 }
