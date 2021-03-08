@@ -65,6 +65,7 @@
 		ED6E757125F51FE2006387CA = {
 			isa = PBXGroup;
 			children = (
+				ED6E772F25F68E25006387CA /* Supporting Files */,
 				ED6E757C25F51FE2006387CA /* Sources */,
 				ED6E757B25F51FE2006387CA /* Products */,
 			);
@@ -85,10 +86,6 @@
 				ED6E75A025F52DCF006387CA /* Networking */,
 				ED6E759B25F52BD1006387CA /* Models */,
 				ED6E757D25F51FE2006387CA /* AppDelegate.swift */,
-				ED6E758125F51FE3006387CA /* Assets.xcassets */,
-				ED6E758325F51FE3006387CA /* Main.storyboard */,
-				ED6E758625F51FE3006387CA /* Info.plist */,
-				ED6E758725F51FE3006387CA /* upbitBar.entitlements */,
 				ED6E765525F648E8006387CA /* SettingViewController.swift */,
 			);
 			path = Sources;
@@ -121,6 +118,17 @@
 				ED6E772925F6836E006387CA /* Notifications.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		ED6E772F25F68E25006387CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED6E758125F51FE3006387CA /* Assets.xcassets */,
+				ED6E758325F51FE3006387CA /* Main.storyboard */,
+				ED6E758625F51FE3006387CA /* Info.plist */,
+				ED6E758725F51FE3006387CA /* upbitBar.entitlements */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,7 +370,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U6GQL8JQMT;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -387,7 +395,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U6GQL8JQMT;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Sources/Info.plist;
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
