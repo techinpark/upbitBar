@@ -61,7 +61,7 @@
 		ED6E757125F51FE2006387CA = {
 			isa = PBXGroup;
 			children = (
-				ED6E757C25F51FE2006387CA /* upbitBar */,
+				ED6E757C25F51FE2006387CA /* Sources */,
 				ED6E757B25F51FE2006387CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ED6E757C25F51FE2006387CA /* upbitBar */ = {
+		ED6E757C25F51FE2006387CA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				ED6E771A25F677D5006387CA /* Utils */,
@@ -87,7 +87,7 @@
 				ED6E758725F51FE3006387CA /* upbitBar.entitlements */,
 				ED6E765525F648E8006387CA /* SettingViewController.swift */,
 			);
-			path = upbitBar;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		ED6E759B25F52BD1006387CA /* Models */ = {
