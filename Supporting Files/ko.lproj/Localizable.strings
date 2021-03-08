@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  upbitBar
+
+  Created by Fernando on 2021/03/09.
+  
+*/
+"app_refresh" = "♻️ 새로고침";
+"app_setting" = "⚙️ 설정";
+"app_quit" = "🚪 종료";
+
+"setting_title" = "🎉 upbitBar 설정하기";
+"setting_auto_launch" = "재시작시 자동 실행";
+"access_token_title" = "Access Token";
+"refresh_token_title" = "Refresh Token";
+"refresh_time_title" = "갱신주기";
+"setting_quit" = "닫기";
+"setting_help_feedback" = "도움말 보기";
+"setting_save" = "저장";
+"setting_alert_title" = "알림";
+"setting_alert_accesstoken_info" = "Access Token을 설정해주세요";
+"setting_alert_refreshtoken_info" = "Refresh Token 을 설정해주세요";
+"ok" = "확인";
+"one_minutes" = "1분";
+"five_minutes" = "5분";
+"ten_minutes" = "10분";
+"fifteen_minutes" = "15분";

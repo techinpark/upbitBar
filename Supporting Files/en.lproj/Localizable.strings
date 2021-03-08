@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  upbitBar
+
+  Created by Fernando on 2021/03/09.
+  
+*/
+
+"app_refresh" = "♻️ Refresh";
+"app_setting" = "⚙️ Preferences";
+"app_quit" = "🚪 Quit";
+
+"setting_title" = "Wellcome to upbitBar";
+"setting_auto_launch" = "Automatically start at Login";
+"access_token_title" = "Access Token";
+"refresh_token_title" = "Refresh Token";
+"refresh_time_title" = "Refresh Time";
+"setting_quit" = "Quit";
+"setting_help_feedback" = "Help & Feedback";
+"setting_save" = "Save";
+"setting_alert_title" = "Warning";
+"setting_alert_accesstoken_info" = "Warning";
+"setting_alert_refreshtoken_info" = "";
+"ok" = "Okay";
+"one_minutes" = "1 Minutes";
+"five_minutes" = "5 Minutes";
+"ten_minutes" = "10 Minutes";
+"fifteen_minutes" = "15 Minutes";

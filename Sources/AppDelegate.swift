@@ -29,21 +29,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private let refreshMenuItem = NSMenuItem().then {
-        $0.title = "♻️ 새로고침"
+        $0.title = Localized.refresh
         $0.action = #selector(onRefreshTap)
         $0.tag = 1
         $0.keyEquivalent = "r"
     }
     
     private let settingMenuItem = NSMenuItem().then {
-        $0.title = "⚙️ 설정"
+        $0.title = Localized.setting
         $0.action = #selector(onSettingTap)
         $0.tag = 2
         $0.keyEquivalent = "s"
     }
     
     private let quitMenuItem = NSMenuItem().then {
-        $0.title = "🚪 종료"
+        $0.title = Localized.quit
         $0.action = #selector(onQuitTap)
         $0.tag = 3
         $0.keyEquivalent = "q"
@@ -135,7 +135,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let screenSize = NSScreen.main?.frame.size ?? .zero
         let rect = NSMakeRect(screenSize.width/2 - windowSize.width/2, screenSize.height/2 - windowSize.height/2, windowSize.width, windowSize.height)
         window = NSWindow(contentRect: rect, styleMask: [.miniaturizable, .closable, .titled], backing: .buffered, defer: false)
-        window.title = "Wellcome to upbitBar"
+        window.title = Localized.settingTitle
         window.contentViewController = SettingViewController()
         
         NSApp.runModal(for: window)

@@ -14,17 +14,12 @@ import LaunchAtLogin
 class SettingViewController: NSViewController {
     
     private struct Consts {
+        
+        static let viewRect =  NSRect(x: 0, y: 0, width: 480, height: 240)
         static let accessTokenFieldFrame = NSRect(x: 0, y: 0, width: 300, height: 30)
         static let refreshTokenFieldFrame = NSRect(x: 0, y: 40, width: 300, height: 30)
     }
-    
-    private struct Localized {
-        static let autoLaunch = NSLocalizedString("Automatically start at Login", comment: "Automatically start at Login")
-        static let accessToken = "Access Token"
-        static let refreshToken = "Refresh Token"
-        static let refreshTime = "Refresh Time"
-    }
-
+  
     private var keys = UPbitKeys()
     
     private let accessTokenField = NSTextField().then {
@@ -36,7 +31,7 @@ class SettingViewController: NSViewController {
     }
     
     private let accessTokenLabel = NSTextField().then {
-        $0.stringValue = "Access Token"
+        $0.stringValue = Localized.accessToken
         $0.isBezeled = false
         $0.isEditable = false
         $0.backgroundColor = .clear
@@ -44,7 +39,7 @@ class SettingViewController: NSViewController {
     }
     
     private let refreshTokenLabel = NSTextField().then {
-        $0.stringValue = "Refresh Token"
+        $0.stringValue = Localized.refreshToken
         $0.isBezeled = false
         $0.isEditable = false
         $0.backgroundColor = .clear
@@ -52,7 +47,7 @@ class SettingViewController: NSViewController {
     }
     
     private let refreshTimeLabel = NSTextField().then {
-        $0.stringValue = "Refresh Time"
+        $0.stringValue = Localized.refreshTime
         $0.isBezeled = false
         $0.isEditable = false
         $0.backgroundColor = .clear
@@ -60,26 +55,26 @@ class SettingViewController: NSViewController {
     }
     
     private let refreshTimeCheckbox = NSPopUpButton().then {
-        $0.addItem(withTitle: "1분")
-        $0.addItem(withTitle: "5분")
-        $0.addItem(withTitle: "10분")
-        $0.addItem(withTitle: "15분")
+        $0.addItem(withTitle: Localized.oneMinutes)
+        $0.addItem(withTitle: Localized.fiveMinutes)
+        $0.addItem(withTitle: Localized.tenMinutes)
+        $0.addItem(withTitle: Localized.fifteenMinues)
     }
     
     private let quitButton = NSButton().then {
-        $0.title = "Quit"
+        $0.title = Localized.settingQuit
         $0.action = #selector(onQuitTap)
         $0.bezelStyle = .rounded
     }
     
     private let helpButton = NSButton().then {
-        $0.title = "Help & Feedback"
+        $0.title = Localized.settingHelpFeedback
         $0.action = #selector(onHelpTap)
         $0.bezelStyle = .rounded
     }
     
     private let saveButton = NSButton().then {
-        $0.title = "Save"
+        $0.title = Localized.settingSave
         $0.action = #selector(onSaveTap)
         $0.bezelStyle = .rounded
         $0.keyEquivalent = "\r"
@@ -92,7 +87,7 @@ class SettingViewController: NSViewController {
     
     
     override func loadView() {
-        let rect = NSRect(x: 0, y: 0, width: 480, height: 240)
+        let rect = Consts.viewRect
         view = NSView(frame: rect)
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
@@ -204,18 +199,18 @@ class SettingViewController: NSViewController {
             
             let alert = NSAlert()
             alert.alertStyle = .warning
-            alert.messageText = "알림"
-            alert.informativeText = "access token을 채워주세요"
-            alert.addButton(withTitle: "확인")
+            alert.messageText = Localized.settingAlertTitle
+            alert.informativeText = Localized.settingAlertAccessTokenInfoText
+            alert.addButton(withTitle: Localized.ok)
             if alert.runModal() == .alertFirstButtonReturn {
                 
             }
         } else if refreshToken.isEmpty {
             
             let alert = NSAlert()
-            alert.messageText = "알림"
-            alert.informativeText = "refresh token을 채워주세요"
-            alert.addButton(withTitle: "확인")
+            alert.messageText = Localized.settingAlertTitle
+            alert.informativeText = Localized.settingAlertRefreshTokenInfoText
+            alert.addButton(withTitle: Localized.ok)
             if alert.runModal() == .alertFirstButtonReturn {
                 
             }
