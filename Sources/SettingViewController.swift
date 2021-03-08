@@ -190,7 +190,8 @@ class SettingViewController: NSViewController {
     }
     
     @objc func onHelpTap() {
-        print("onHelpTap")
+        let url = URL(string: "https://github.com/techinpark/upbitBar")!
+        NSWorkspace.shared.open(url)
     }
     
     @objc func onSaveTap() {
