@@ -3,24 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		ED6E757E25F51FE2006387CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E757D25F51FE2006387CA /* AppDelegate.swift */; };
-		ED6E758025F51FE2006387CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E757F25F51FE2006387CA /* ViewController.swift */; };
 		ED6E758225F51FE3006387CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6E758125F51FE3006387CA /* Assets.xcassets */; };
 		ED6E758525F51FE3006387CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6E758325F51FE3006387CA /* Main.storyboard */; };
+		ED6E759025F5204B006387CA /* Just in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E758F25F5204B006387CA /* Just */; };
+		ED6E759425F5224B006387CA /* JWTComponents in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E759325F5224B006387CA /* JWTComponents */; };
+		ED6E759925F522EC006387CA /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E759825F522EC006387CA /* Then */; };
+		ED6E759D25F52C45006387CA /* CryptoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E759C25F52C45006387CA /* CryptoAsset.swift */; };
+		ED6E75A225F52DE1006387CA /* UpbitServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E75A125F52DE1006387CA /* UpbitServices.swift */; };
+		ED6E75A725F53056006387CA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E75A625F53056006387CA /* Logging */; };
+		ED6E75AA25F5325A006387CA /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E75A925F5325A006387CA /* Ticker.swift */; };
+		ED6E75AD25F54617006387CA /* Cryptocurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E75AC25F54617006387CA /* Cryptocurrency.swift */; };
+		ED6E75B125F54B0E006387CA /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E75B025F54B0E006387CA /* LaunchAtLogin */; };
+		ED6E75B425F54B6C006387CA /* UPbitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E75B325F54B6C006387CA /* UPbitAPI.swift */; };
+		ED6E765625F648E8006387CA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E765525F648E8006387CA /* SettingViewController.swift */; };
+		ED6E765A25F64BC5006387CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E765925F64BC5006387CA /* SnapKit */; };
+		ED6E772125F67802006387CA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E772025F67802006387CA /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED6E757A25F51FE2006387CA /* upbitBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = upbitBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6E757D25F51FE2006387CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED6E757F25F51FE2006387CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED6E758125F51FE3006387CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED6E758425F51FE3006387CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED6E758625F51FE3006387CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED6E758725F51FE3006387CA /* upbitBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = upbitBar.entitlements; sourceTree = "<group>"; };
+		ED6E759C25F52C45006387CA /* CryptoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAsset.swift; sourceTree = "<group>"; };
+		ED6E75A125F52DE1006387CA /* UpbitServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitServices.swift; sourceTree = "<group>"; };
+		ED6E75A925F5325A006387CA /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		ED6E75AC25F54617006387CA /* Cryptocurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptocurrency.swift; sourceTree = "<group>"; };
+		ED6E75B325F54B6C006387CA /* UPbitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPbitAPI.swift; sourceTree = "<group>"; };
+		ED6E765525F648E8006387CA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		ED6E772025F67802006387CA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +46,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED6E759425F5224B006387CA /* JWTComponents in Frameworks */,
+				ED6E759925F522EC006387CA /* Then in Frameworks */,
+				ED6E75A725F53056006387CA /* Logging in Frameworks */,
+				ED6E765A25F64BC5006387CA /* SnapKit in Frameworks */,
+				ED6E75B125F54B0E006387CA /* LaunchAtLogin in Frameworks */,
+				ED6E759025F5204B006387CA /* Just in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,14 +77,44 @@
 		ED6E757C25F51FE2006387CA /* upbitBar */ = {
 			isa = PBXGroup;
 			children = (
+				ED6E771A25F677D5006387CA /* Utils */,
+				ED6E75A025F52DCF006387CA /* Networking */,
+				ED6E759B25F52BD1006387CA /* Models */,
 				ED6E757D25F51FE2006387CA /* AppDelegate.swift */,
-				ED6E757F25F51FE2006387CA /* ViewController.swift */,
 				ED6E758125F51FE3006387CA /* Assets.xcassets */,
 				ED6E758325F51FE3006387CA /* Main.storyboard */,
 				ED6E758625F51FE3006387CA /* Info.plist */,
 				ED6E758725F51FE3006387CA /* upbitBar.entitlements */,
+				ED6E765525F648E8006387CA /* SettingViewController.swift */,
 			);
 			path = upbitBar;
+			sourceTree = "<group>";
+		};
+		ED6E759B25F52BD1006387CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED6E759C25F52C45006387CA /* CryptoAsset.swift */,
+				ED6E75A925F5325A006387CA /* Ticker.swift */,
+				ED6E75AC25F54617006387CA /* Cryptocurrency.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED6E75A025F52DCF006387CA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ED6E75A125F52DE1006387CA /* UpbitServices.swift */,
+				ED6E75B325F54B6C006387CA /* UPbitAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		ED6E771A25F677D5006387CA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ED6E772025F67802006387CA /* UserInfo.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,6 +133,14 @@
 			dependencies = (
 			);
 			name = upbitBar;
+			packageProductDependencies = (
+				ED6E758F25F5204B006387CA /* Just */,
+				ED6E759325F5224B006387CA /* JWTComponents */,
+				ED6E759825F522EC006387CA /* Then */,
+				ED6E75A625F53056006387CA /* Logging */,
+				ED6E75B025F54B0E006387CA /* LaunchAtLogin */,
+				ED6E765925F64BC5006387CA /* SnapKit */,
+			);
 			productName = upbitBar;
 			productReference = ED6E757A25F51FE2006387CA /* upbitBar.app */;
 			productType = "com.apple.product-type.application";
@@ -106,6 +168,14 @@
 				Base,
 			);
 			mainGroup = ED6E757125F51FE2006387CA;
+			packageReferences = (
+				ED6E758E25F5204B006387CA /* XCRemoteSwiftPackageReference "Just" */,
+				ED6E759225F5224B006387CA /* XCRemoteSwiftPackageReference "JWTComponents" */,
+				ED6E759725F522EC006387CA /* XCRemoteSwiftPackageReference "then" */,
+				ED6E75A525F53056006387CA /* XCRemoteSwiftPackageReference "swift-log" */,
+				ED6E75AF25F54B0E006387CA /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				ED6E765825F64BC5006387CA /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = ED6E757B25F51FE2006387CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,7 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED6E758025F51FE2006387CA /* ViewController.swift in Sources */,
+				ED6E759D25F52C45006387CA /* CryptoAsset.swift in Sources */,
+				ED6E75AD25F54617006387CA /* Cryptocurrency.swift in Sources */,
+				ED6E765625F648E8006387CA /* SettingViewController.swift in Sources */,
+				ED6E75AA25F5325A006387CA /* Ticker.swift in Sources */,
+				ED6E75B425F54B6C006387CA /* UPbitAPI.swift in Sources */,
+				ED6E75A225F52DE1006387CA /* UpbitServices.swift in Sources */,
+				ED6E772125F67802006387CA /* UserInfo.swift in Sources */,
 				ED6E757E25F51FE2006387CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +357,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsae.upbitBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -302,6 +379,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmsae.upbitBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -330,6 +408,90 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ED6E758E25F5204B006387CA /* XCRemoteSwiftPackageReference "Just" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dduan/Just";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
+		ED6E759225F5224B006387CA /* XCRemoteSwiftPackageReference "JWTComponents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/couchdeveloper/JWTComponents";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+		ED6E759725F522EC006387CA /* XCRemoteSwiftPackageReference "then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://github.com/devxoul/then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+		ED6E75A525F53056006387CA /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.2;
+			};
+		};
+		ED6E75AF25F54B0E006387CA /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		ED6E765825F64BC5006387CA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED6E758F25F5204B006387CA /* Just */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6E758E25F5204B006387CA /* XCRemoteSwiftPackageReference "Just" */;
+			productName = Just;
+		};
+		ED6E759325F5224B006387CA /* JWTComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6E759225F5224B006387CA /* XCRemoteSwiftPackageReference "JWTComponents" */;
+			productName = JWTComponents;
+		};
+		ED6E759825F522EC006387CA /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6E759725F522EC006387CA /* XCRemoteSwiftPackageReference "then" */;
+			productName = Then;
+		};
+		ED6E75A625F53056006387CA /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6E75A525F53056006387CA /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		ED6E75B025F54B0E006387CA /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6E75AF25F54B0E006387CA /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+		ED6E765925F64BC5006387CA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED6E765825F64BC5006387CA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED6E757225F51FE2006387CA /* Project object */;
 }

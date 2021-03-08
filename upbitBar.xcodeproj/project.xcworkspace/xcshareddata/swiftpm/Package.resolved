@@ -1,0 +1,70 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Just",
+        "repositoryURL": "https://github.com/dduan/Just",
+        "state": {
+          "branch": null,
+          "revision": "1824bf84cf52d11d69ae20cfb89f0ce5bffa5650",
+          "version": "0.8.0"
+        }
+      },
+      {
+        "package": "JWTComponents",
+        "repositoryURL": "https://github.com/couchdeveloper/JWTComponents",
+        "state": {
+          "branch": null,
+          "revision": "ddf78f2213f74c82ad0acbe2e6b08c74908d9dc0",
+          "version": "0.4.0"
+        }
+      },
+      {
+        "package": "LaunchAtLogin",
+        "repositoryURL": "https://github.com/sindresorhus/LaunchAtLogin",
+        "state": {
+          "branch": null,
+          "revision": "0f39982b9d6993eef253b81219d3c39ba1e680f3",
+          "version": "4.0.0"
+        }
+      },
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit",
+        "state": {
+          "branch": null,
+          "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
+          "version": "5.0.1"
+        }
+      },
+      {
+        "package": "swift-crypto",
+        "repositoryURL": "https://github.com/apple/swift-crypto.git",
+        "state": {
+          "branch": null,
+          "revision": "0141f53dd525706c803b0c20aa8ad36f9ecd45e5",
+          "version": "1.1.5"
+        }
+      },
+      {
+        "package": "swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log",
+        "state": {
+          "branch": null,
+          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+          "version": "1.4.2"
+        }
+      },
+      {
+        "package": "Then",
+        "repositoryURL": "http://github.com/devxoul/then",
+        "state": {
+          "branch": null,
+          "revision": "e421a7b3440a271834337694e6050133a3958bc7",
+          "version": "2.7.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
