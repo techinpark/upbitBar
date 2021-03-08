@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UPbitAPI {
+enum UpbitAPI {
     
     /// 나의 자산을 조회합니다
     case balances
@@ -16,7 +16,7 @@ enum UPbitAPI {
     case ticker
 }
 
-extension UPbitAPI {
+extension UpbitAPI {
     
     /// baseURL 을 지정합니다
     var baseURL: String {

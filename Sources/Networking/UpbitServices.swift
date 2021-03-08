@@ -45,7 +45,7 @@ class UpbitServices {
     func getBalances() -> [CryptoAsset]? {
         
         if let bearerToken = generateJWTToken() {
-            let targetURL = UPbitAPI.balances.targetURL
+            let targetURL = UpbitAPI.balances.targetURL
             let headers: [String: String] = ["Authorization": bearerToken]
             let response = Just.get(targetURL, headers: headers)
             let jsonData = response.content!
@@ -67,7 +67,7 @@ class UpbitServices {
     func getTicker(markets: String) -> [Ticker]? {
         
         if let bearerToken = generateJWTToken() {
-            let targetURL = "\(UPbitAPI.ticker.targetURL)?markets=\(markets)"
+            let targetURL = "\(UpbitAPI.ticker.targetURL)?markets=\(markets)"
             print(targetURL)
             let headers: [String: String] = ["Authorization": bearerToken]
             let response = Just.get(targetURL, headers: headers)

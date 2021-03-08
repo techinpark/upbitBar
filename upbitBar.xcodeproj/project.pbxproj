@@ -19,7 +19,7 @@
 		ED6E75AA25F5325A006387CA /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E75A925F5325A006387CA /* Ticker.swift */; };
 		ED6E75AD25F54617006387CA /* Cryptocurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E75AC25F54617006387CA /* Cryptocurrency.swift */; };
 		ED6E75B125F54B0E006387CA /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E75B025F54B0E006387CA /* LaunchAtLogin */; };
-		ED6E75B425F54B6C006387CA /* UPbitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E75B325F54B6C006387CA /* UPbitAPI.swift */; };
+		ED6E75B425F54B6C006387CA /* UpbitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E75B325F54B6C006387CA /* UpbitAPI.swift */; };
 		ED6E765625F648E8006387CA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E765525F648E8006387CA /* SettingViewController.swift */; };
 		ED6E765A25F64BC5006387CA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ED6E765925F64BC5006387CA /* SnapKit */; };
 		ED6E772125F67802006387CA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E772025F67802006387CA /* UserInfo.swift */; };
@@ -40,7 +40,7 @@
 		ED6E75A125F52DE1006387CA /* UpbitServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitServices.swift; sourceTree = "<group>"; };
 		ED6E75A925F5325A006387CA /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		ED6E75AC25F54617006387CA /* Cryptocurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptocurrency.swift; sourceTree = "<group>"; };
-		ED6E75B325F54B6C006387CA /* UPbitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPbitAPI.swift; sourceTree = "<group>"; };
+		ED6E75B325F54B6C006387CA /* UpbitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitAPI.swift; sourceTree = "<group>"; };
 		ED6E765525F648E8006387CA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ED6E772025F67802006387CA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		ED6E772925F6836E006387CA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				ED6E75A125F52DE1006387CA /* UpbitServices.swift */,
-				ED6E75B325F54B6C006387CA /* UPbitAPI.swift */,
+				ED6E75B325F54B6C006387CA /* UpbitAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 				ED6E765625F648E8006387CA /* SettingViewController.swift in Sources */,
 				ED6E772A25F6836E006387CA /* Notifications.swift in Sources */,
 				ED6E75AA25F5325A006387CA /* Ticker.swift in Sources */,
-				ED6E75B425F54B6C006387CA /* UPbitAPI.swift in Sources */,
+				ED6E75B425F54B6C006387CA /* UpbitAPI.swift in Sources */,
 				ED6E75A225F52DE1006387CA /* UpbitServices.swift in Sources */,
 				ED6E774125F68F14006387CA /* Localized.swift in Sources */,
 				ED6E772125F67802006387CA /* UserInfo.swift in Sources */,
