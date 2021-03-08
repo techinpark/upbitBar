@@ -110,9 +110,8 @@ class SettingViewController: NSViewController {
         view.addSubview(saveButton)
         
         
-        accessTokenField.stringValue = keys.accessToken
-        refreshTokenField.stringValue = keys.refreshToken
-        
+       
+        setupDefaultValues()
         setupConstraints()
     }
     
@@ -174,6 +173,13 @@ class SettingViewController: NSViewController {
     }
     
     // MARK: Private functions
+    
+    func setupDefaultValues() {
+        accessTokenField.stringValue = keys.accessToken
+        refreshTokenField.stringValue = keys.refreshToken
+        refreshTimeCheckbox.selectItem(at: keys.refershInterVal)
+        startAtLoginButton.state = LaunchAtLogin.isEnabled ? .off : .on
+    }
     
     @objc func setupLaunchToggle() {
         LaunchAtLogin.isEnabled.toggle()
