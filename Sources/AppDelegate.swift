@@ -135,6 +135,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentViewController = SettingViewController()
         
         NSApp.runModal(for: window)
+        NSApp.activate(ignoringOtherApps: true)
         window.orderOut(self)
     }
     
@@ -165,11 +166,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if ticker.market == currentMarket {
                     
                     let totalAsset = Double(balance.balance) ?? 0
-                    print(balance.balance)
-                    print("평균단가 \(balance.avgBuyPrice)")
-                    
                     let totalPrice = Double(ticker.tradePrice) * totalAsset
                     let buyPrice = Double(balance.avgBuyPrice)! * totalAsset
+                    let percent = (Double(ticker.tradePrice) / Double(balance.avgBuyPrice)!-1.0) * 100
                     
                     var emoji = "-"
                     var attributes = Attributes.cryptoNormalAttributes
@@ -184,8 +183,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     
                     avgTotalBalances.append(buyPrice)
                     totalBalances.append(totalPrice)
+                    
                     let totalString = self.convertCurrency(prefix:"", money: round(totalPrice))
-                    let title: String = "\(emoji) \(balance.currency) - \(totalString)"
+                    let title: String = "\(emoji) \(balance.currency) - \(totalString) (\(percent.rounded())%)"
                     
                     let menuItem = NSMenuItem().then {
                         $0.isEnabled = true
