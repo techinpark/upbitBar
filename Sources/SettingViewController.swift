@@ -26,7 +26,7 @@ class SettingViewController: NSViewController {
         $0.frame = Consts.accessTokenFieldFrame
     }
     
-    private let refreshTokenField = NSTextField().then {
+    private let secretTokenField = NSTextField().then {
         $0.frame = Consts.refreshTokenFieldFrame
     }
     
@@ -39,7 +39,7 @@ class SettingViewController: NSViewController {
     }
     
     private let refreshTokenLabel = NSTextField().then {
-        $0.stringValue = Localized.refreshToken
+        $0.stringValue = Localized.secretToken
         $0.isBezeled = false
         $0.isEditable = false
         $0.backgroundColor = .clear
@@ -96,7 +96,7 @@ class SettingViewController: NSViewController {
         view.addSubview(accessTokenLabel)
         view.addSubview(accessTokenField)
         view.addSubview(refreshTokenLabel)
-        view.addSubview(refreshTokenField)
+        view.addSubview(secretTokenField)
         view.addSubview(refreshTimeLabel)
         view.addSubview(refreshTimeCheckbox)
         view.addSubview(startAtLoginButton)
@@ -127,14 +127,14 @@ class SettingViewController: NSViewController {
             $0.left.equalToSuperview().offset(10)
         }
         
-        refreshTokenField.snp.makeConstraints {
+        secretTokenField.snp.makeConstraints {
             $0.centerY.equalTo(refreshTokenLabel.snp.centerY)
             $0.left.equalTo(refreshTokenLabel.snp.right).offset(30)
         }
         
         
         refreshTimeLabel.snp.makeConstraints {
-            $0.top.equalTo(refreshTokenField.snp.bottom).offset(20)
+            $0.top.equalTo(secretTokenField.snp.bottom).offset(20)
             $0.left.equalToSuperview().offset(10)
         }
         
@@ -171,7 +171,7 @@ class SettingViewController: NSViewController {
     
     func setupDefaultValues() {
         accessTokenField.stringValue = keys.accessToken
-        refreshTokenField.stringValue = keys.refreshToken
+        secretTokenField.stringValue = keys.secretToken
         refreshTimeCheckbox.selectItem(at: keys.refershInterVal)
         startAtLoginButton.state = LaunchAtLogin.isEnabled ? .off : .on
     }
@@ -193,7 +193,7 @@ class SettingViewController: NSViewController {
         print("onSaveTap")
         
         let accessToken = accessTokenField.stringValue
-        let refreshToken = refreshTokenField.stringValue
+        let refreshToken = secretTokenField.stringValue
         
         if accessToken.isEmpty  || accessToken.count < 40{
             
@@ -217,7 +217,7 @@ class SettingViewController: NSViewController {
         }
         
         keys.accessToken = accessToken
-        keys.refreshToken = refreshToken
+        keys.secretToken = refreshToken
         keys.refershInterVal = refreshTimeCheckbox.indexOfSelectedItem
         
         let balances = UpbitServices.shared.getBalances()

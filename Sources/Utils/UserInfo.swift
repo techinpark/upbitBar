@@ -25,7 +25,7 @@ struct UserInfo<T> {
 }
 
 struct UPbitKeys {
-    @UserInfo(key: "accessToken", defaultValue: "") var accessToken: String
-    @UserInfo(key: "refreshToken", defaultValue: "") var refreshToken: String
+    @UserInfo(key: "accessKey", defaultValue: "") var accessToken: String
+    @UserInfo(key: "secretKey", defaultValue: "") var secretToken: String
     @UserInfo(key: "refreshInterval", defaultValue: 5) var refershInterVal: Int
 }

@@ -13,13 +13,11 @@ struct Localized {
     static let setting = NSLocalizedString("app_setting", comment: "⚙️ 설정")
     static let quit = NSLocalizedString("app_quit", comment: "🚪 종료")
     
-    static let settingTitle = NSLocalizedString("setting_title", comment: "Wellcome to upbitBar")
-    
-    
     /// SettingViewController
+    static let settingTitle = NSLocalizedString("setting_title", comment: "Wellcome to upbitBar")
     static let autoLaunch = NSLocalizedString("setting_auto_launch", comment: "Automatically start at Login")
-    static let accessToken = NSLocalizedString("access_token_title", comment: "Access Token")
-    static let refreshToken = NSLocalizedString("refresh_token_title", comment: "Refresh Token")
+    static let accessToken = NSLocalizedString("access_token_title", comment: "Access Key")
+    static let secretToken = NSLocalizedString("secret_token_title", comment: "Secret Key")
     static let refreshTime = NSLocalizedString("refresh_time_title", comment: "Refresh Time")
     
     static let settingQuit = NSLocalizedString("setting_quit", comment: "Quit")

@@ -11,8 +11,8 @@
 
 "setting_title" = "🎉 upbitBar 설정하기";
 "setting_auto_launch" = "재시작시 자동 실행";
-"access_token_title" = "Access Token";
-"refresh_token_title" = "Refresh Token";
+"access_token_title" = "Access key";
+"secret_token_title" = "Secret key";
 "refresh_time_title" = "갱신주기";
 "setting_quit" = "닫기";
 "setting_help_feedback" = "도움말 보기";

@@ -12,8 +12,8 @@
 
 "setting_title" = "Wellcome to upbitBar";
 "setting_auto_launch" = "Automatically start at Login";
-"access_token_title" = "Access Token";
-"refresh_token_title" = "Refresh Token";
+"access_token_title" = "Access key";
+"secret_token_title" = "Secret key";
 "refresh_time_title" = "Refresh Time";
 "setting_quit" = "Quit";
 "setting_help_feedback" = "Help & Feedback";

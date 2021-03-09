@@ -21,7 +21,7 @@ class UpbitServices {
     func generateJWTToken() -> String? {
         
         var jwtc = JWTComponents()
-        let secretKey = keys.refreshToken.data(using: .utf8)!
+        let secretKey = keys.secretToken.data(using: .utf8)!
         let accessToken: String = keys.accessToken
         let nonce: String =  UUID().uuidString
                 
