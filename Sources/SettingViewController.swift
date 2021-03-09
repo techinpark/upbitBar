@@ -195,7 +195,7 @@ class SettingViewController: NSViewController {
         let accessToken = accessTokenField.stringValue
         let refreshToken = refreshTokenField.stringValue
         
-        if accessToken.isEmpty {
+        if accessToken.isEmpty  || accessToken.count < 40{
             
             let alert = NSAlert()
             alert.alertStyle = .warning
@@ -203,16 +203,16 @@ class SettingViewController: NSViewController {
             alert.informativeText = Localized.settingAlertAccessTokenInfoText
             alert.addButton(withTitle: Localized.ok)
             if alert.runModal() == .alertFirstButtonReturn {
-                
+                return
             }
-        } else if refreshToken.isEmpty {
+        } else if refreshToken.isEmpty || refreshToken.count < 40 {
             
             let alert = NSAlert()
             alert.messageText = Localized.settingAlertTitle
             alert.informativeText = Localized.settingAlertRefreshTokenInfoText
             alert.addButton(withTitle: Localized.ok)
             if alert.runModal() == .alertFirstButtonReturn {
-                
+                return
             }
         }
         
@@ -220,8 +220,13 @@ class SettingViewController: NSViewController {
         keys.refreshToken = refreshToken
         keys.refershInterVal = refreshTimeCheckbox.indexOfSelectedItem
         
-        NotificationCenter.default.post(name: .neededRefresh, object: nil)
+        let balances = UpbitServices.shared.getBalances()
+        
+        
+        
         NSApp.stopModal()
+        NotificationCenter.default.post(name: .neededRefresh, object: nil)
+        
     }
     
 }

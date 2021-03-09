@@ -18,8 +18,8 @@
 "setting_help_feedback" = "도움말 보기";
 "setting_save" = "저장";
 "setting_alert_title" = "알림";
-"setting_alert_accesstoken_info" = "Access Token을 설정해주세요";
-"setting_alert_refreshtoken_info" = "Refresh Token 을 설정해주세요";
+"setting_alert_accesstoken_info" = "Access Token 값이 올바르지 않습니다 다시한번 확인해주세요 ";
+"setting_alert_refreshtoken_info" = "Refresh Token 값이 올바르지 않습니다 다시한번 확인해주세요 ";
 "ok" = "확인";
 "one_minutes" = "1분";
 "five_minutes" = "5분";
