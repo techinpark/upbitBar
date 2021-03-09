@@ -220,10 +220,6 @@ class SettingViewController: NSViewController {
         keys.secretToken = refreshToken
         keys.refershInterVal = refreshTimeCheckbox.indexOfSelectedItem
         
-        let balances = UpbitServices.shared.getBalances()
-        
-        
-        
         NSApp.stopModal()
         NotificationCenter.default.post(name: .neededRefresh, object: nil)
         
