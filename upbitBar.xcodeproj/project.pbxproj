@@ -150,6 +150,7 @@
 			buildConfigurationList = ED6E758A25F51FE4006387CA /* Build configuration list for PBXNativeTarget "upbitBar" */;
 			buildPhases = (
 				ED6E757625F51FE2006387CA /* Sources */,
+				ED3BF34D25F7F2F500F05BB5 /* LaunchAtLogin */,
 				ED6E757725F51FE2006387CA /* Frameworks */,
 				ED6E757825F51FE2006387CA /* Resources */,
 			);
@@ -223,6 +224,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ED3BF34D25F7F2F500F05BB5 /* LaunchAtLogin */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LaunchAtLogin;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED6E757625F51FE2006387CA /* Sources */ = {
