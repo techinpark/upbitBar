@@ -144,7 +144,7 @@ class SettingViewController: NSViewController {
         }
         
         startAtLoginButton.snp.makeConstraints {
-            $0.top.equalTo(refreshTimeCheckbox.snp.bottom).offset(10)
+            $0.top.equalTo(refreshTimeCheckbox.snp.bottom).offset(20)
             $0.left.equalToSuperview().offset(10)
         }
         
