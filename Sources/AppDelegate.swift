@@ -14,10 +14,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private struct Consts {
         static let cryptoTags = 99
-        
-        static var cryptoAttributes: [NSAttributedString.Key: Any] {
-            return [.font : NSFont.systemFont(ofSize: 12.0, weight: .light)]
-        }
     }
     
     private var statusItem: NSStatusItem?
@@ -161,6 +157,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard let tickers = UpbitServices.shared.getTicker(markets: markets) else { return }
         
         var totalBalances: [Double] = []
+        var avgTotalBalances: [Double] = []
         
         for ticker in tickers {
             for balance in balances {
@@ -169,16 +166,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     
                     let totalAsset = Double(balance.balance) ?? 0
                     print(balance.balance)
+                    print("평균단가 \(balance.avgBuyPrice)")
+                    
                     let totalPrice = Double(ticker.tradePrice) * totalAsset
+                    let buyPrice = Double(balance.avgBuyPrice)! * totalAsset
+                    
+                    var emoji = "-"
+                    var attributes = Attributes.cryptoNormalAttributes
+                    
+                    if totalPrice < buyPrice {
+                        emoji = "📉"
+                        attributes = Attributes.cryptoBlueAttributes
+                    } else if buyPrice < totalPrice {
+                        emoji = "📈"
+                        attributes = Attributes.cryptoRedAttributes
+                    }
+                    
+                    avgTotalBalances.append(buyPrice)
                     totalBalances.append(totalPrice)
                     let totalString = self.convertCurrency(prefix:"", money: round(totalPrice))
-                    let title: String = "✳️ \(balance.currency) - \(totalString)"
+                    let title: String = "\(emoji) \(balance.currency) - \(totalString)"
                     
                     let menuItem = NSMenuItem().then {
                         $0.isEnabled = true
                         $0.tag = Consts.cryptoTags
                         $0.action = #selector(onMenuItemTap)
-                        $0.attributedTitle = NSAttributedString(string: title, attributes: Consts.cryptoAttributes)
+                        $0.attributedTitle = NSAttributedString(string: title, attributes: attributes)
                     }
                     
                     self.menu.insertItem(menuItem, at: .zero)
@@ -187,7 +200,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         let total = totalBalances.map { round($0) }.reduce(0, +)
-        self.statusItem?.button?.title = self.convertCurrency(prefix: "💰", money: total)
+        let avg = avgTotalBalances.map { round($0) }.reduce(0, +)
+        var title = ""
+        var totalAttributes = Attributes.cryptoNormalAttributes
+        
+        if avg < total {
+            title = self.convertCurrency(prefix: "📈", money: total)
+            totalAttributes = Attributes.cryptoRedAttributes
+        } else if total < avg {
+            title = self.convertCurrency(prefix: "📉", money: total)
+            totalAttributes = Attributes.cryptoBlueAttributes
+        }
+        
+        self.statusItem?.button?.attributedTitle = NSAttributedString(string: title, attributes: totalAttributes)
     }
     
     func convertCurrency(prefix: String, money: Double) -> String {
