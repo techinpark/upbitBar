@@ -1,4 +1,4 @@
-# UpbitBar 
+# upbitBar 
 
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/techinpark/jandi/blob/main/LICENSE)
