@@ -172,6 +172,11 @@ class SettingViewController: NSViewController {
     func setupDefaultValues() {
         accessTokenField.stringValue = keys.accessToken
         secretTokenField.stringValue = keys.secretToken
+        
+        if  keys.refershInterVal == -1 {
+            keys.refershInterVal = 1
+        }
+        
         refreshTimeCheckbox.selectItem(at: keys.refershInterVal)
         startAtLoginButton.state = LaunchAtLogin.isEnabled ? .off : .on
     }
