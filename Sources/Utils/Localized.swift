@@ -9,9 +9,9 @@ import Foundation
 
 struct Localized {
     
-    static let refresh = NSLocalizedString("app_refresh", comment: "♻️ 새로고침")
-    static let setting = NSLocalizedString("app_setting", comment: "⚙️ 설정")
-    static let quit = NSLocalizedString("app_quit", comment: "🚪 종료")
+    static let refresh = NSLocalizedString("app_refresh", comment: "♻️ Refresh")
+    static let setting = NSLocalizedString("app_setting", comment: "⚙️ Preferences")
+    static let quit = NSLocalizedString("app_quit", comment: "🚪 Quit")
     
     /// SettingViewController
     static let settingTitle = NSLocalizedString("setting_title", comment: "Wellcome to upbitBar")
@@ -24,13 +24,13 @@ struct Localized {
     static let settingHelpFeedback = NSLocalizedString(("setting_help_feedback"), comment: "Help & Feedback")
     static let settingSave = NSLocalizedString("setting_save", comment: "Save")
     
-    static let settingAlertTitle = NSLocalizedString("setting_alert_title", comment: "알림")
+    static let settingAlertTitle = NSLocalizedString("setting_alert_title", comment: "Warning")
     static let settingAlertAccessTokenInfoText = NSLocalizedString("setting_alert_accesstoken_info", comment: "")
     static let settingAlertRefreshTokenInfoText = NSLocalizedString("setting_alert_refreshtoken_info", comment: "")
-    static let ok = NSLocalizedString("ok", comment: "확인")
+    static let ok = NSLocalizedString("ok", comment: "ok")
     
-    static let oneMinutes = NSLocalizedString("one_minutes", comment: "")
-    static let fiveMinutes = NSLocalizedString("five_minutes", comment: "")
-    static let tenMinutes = NSLocalizedString("ten_minutes", comment: "")
-    static let fifteenMinues = NSLocalizedString("fifteen_minutes", comment: "")
+    static let oneMinutes = NSLocalizedString("one_minutes", comment: "1 minutes")
+    static let fiveMinutes = NSLocalizedString("five_minutes", comment: "5 minutes")
+    static let tenMinutes = NSLocalizedString("ten_minutes", comment: "10 minutes")
+    static let fifteenMinues = NSLocalizedString("fifteen_minutes", comment: "15 minutes")
 }
