@@ -37,7 +37,8 @@
 ## 설치하기 🎉 
 
 ### AppStore
-- 준비중
+
+<a href="https://apps.apple.com/us/app/upbitbar-%EC%97%85%EB%B9%84%ED%8A%B8-%EC%9E%90%EC%82%B0-%EC%83%81%ED%83%9C%EB%B0%94/id1557670807?mt=12&amp;itsct=apps_box&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-US?size=250x83&amp;releaseDate=1615334400&h=5932b6c25cf2fde96206d5ffa638d95d" alt="Download on the Mac App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 
 ## 이 프로젝트가 유용하셨나요 ? ❤️
 
