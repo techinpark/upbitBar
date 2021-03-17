@@ -72,8 +72,13 @@ class UpbitServices {
             let headers: [String: String] = ["Authorization": bearerToken]
             let response = Just.get(targetURL, headers: headers)
             let jsonData = response.content!
-            let result = try! JSONDecoder().decode([Ticker].self, from: jsonData)
+          do {
+            let result = try JSONDecoder().decode([Ticker].self, from: jsonData)
             return result
+          } catch let error {
+            print(error.localizedDescription)
+          }
+            
         }
         
         return nil
