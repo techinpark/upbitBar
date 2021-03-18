@@ -14,6 +14,9 @@ enum UpbitAPI {
     
     /// 현재가를 조회합니다
     case ticker
+    
+    /// 업비트에서 거래 가능한 목록을 조회합니다
+    case market
 }
 
 extension UpbitAPI {
@@ -35,6 +38,8 @@ extension UpbitAPI {
             return "/\(version)/accounts/"
         case .ticker:
             return "/\(version)/ticker/"
+        case .market:
+            return "/\(version)/market/"
         }
     }
     

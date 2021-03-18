@@ -26,9 +26,9 @@ class UpbitServices {
         let nonce: String =  UUID().uuidString
                 
         do {
-            try jwtc.setValue(accessToken, forClaim: "access_key")
-            try jwtc.setValue(nonce, forClaim: "nonce")
-            try jwtc.setValue("HS256", forHeaderParameter: .alg)
+            try jwtc.setValue(accessToken, forClaim: ServicesKey.accessKey.rawValue)
+            try jwtc.setValue(nonce, forClaim: ServicesKey.nonce.rawValue)
+            try jwtc.setValue(ServicesKey.hs256.rawValue, forHeaderParameter: .alg)
             try jwtc.sign(withKey: secretKey)
             
             if let bearer = jwtc.jwt {
@@ -46,7 +46,7 @@ class UpbitServices {
         
         if let bearerToken = generateJWTToken() {
             let targetURL = UpbitAPI.balances.targetURL
-            let headers: [String: String] = ["Authorization": bearerToken]
+            let headers: [String: String] = [Constants.authorization.rawValue: bearerToken]
             let response = Just.get(targetURL, headers: headers)
             let jsonData = response.content!
             
@@ -66,16 +66,37 @@ class UpbitServices {
     /// 현재가를 조회합니다
     func getTicker(markets: String) -> [Ticker]? {
         
-        if let bearerToken = generateJWTToken() {
-            let targetURL = "\(UpbitAPI.ticker.targetURL)?markets=\(markets)"
-            print(targetURL)
-            let headers: [String: String] = ["Authorization": bearerToken]
-            let response = Just.get(targetURL, headers: headers)
-            let jsonData = response.content!
-            let result = try! JSONDecoder().decode([Ticker].self, from: jsonData)
-            return result
-        }
+        guard let bearerToken = generateJWTToken() else { return nil }
+        let targetURL = "\(UpbitAPI.ticker.targetURL)?markets=\(markets)"
+        print(targetURL)
         
-        return nil
+        let headers: [String: String] = [Constants.authorization.rawValue: bearerToken]
+        let response = Just.get(targetURL, headers: headers)
+        
+        guard let jsonData = response.content else { return nil }
+        do{
+            return try JSONDecoder().decode([Ticker].self, from: jsonData)
+        }catch let error{
+            
+            print("error: \(error.localizedDescription)")
+            print("response: \(String(describing: String(data: jsonData, encoding: .utf8)))")
+            return nil
+        }
+    }
+    
+    // 업비트에서 거래 가능한 코인을 조회합니다
+    func getAllMarket() -> [Market]?{
+        let targetURL = "\(UpbitAPI.market.targetURL)all"
+        let response = Just.get(targetURL)
+        
+        guard let jsonData = response.content else { return nil }
+        do{
+            return try JSONDecoder().decode([Market].self, from: jsonData)
+        }catch let error{
+            
+            print("error: \(error.localizedDescription)")
+            print("response: \(String(describing: String(data: jsonData, encoding: .utf8)))")
+            return nil
+        }
     }
 }
