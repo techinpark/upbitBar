@@ -67,7 +67,7 @@ class UpbitServices {
         let response = Just.get(targetURL, headers: headers)
         
         guard let jsonData = response.content else { return nil }
-        do{
+        do {
             return try JSONDecoder().decode([Ticker].self, from: jsonData)
         } catch {
             print("error: \(error.localizedDescription)")
@@ -82,7 +82,7 @@ class UpbitServices {
         let response = Just.get(targetURL)
         
         guard let jsonData = response.content else { return nil }
-        do{
+        do {
             return try JSONDecoder().decode([Market].self, from: jsonData)
         } catch {
             print("error: \(error.localizedDescription)")
