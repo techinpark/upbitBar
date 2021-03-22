@@ -58,7 +58,6 @@ class UpbitServices {
     
     /// 현재가를 조회합니다
     func getTicker(markets: String) -> [Ticker]? {
-        
         guard let bearerToken = generateJWTToken() else { return nil }
         let targetURL = "\(UpbitAPI.ticker.targetURL)?markets=\(markets)"
         print(targetURL)
