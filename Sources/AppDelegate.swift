@@ -157,7 +157,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .filter{ market -> Bool in availableMarkets.filter{ $0 == market }.first != nil }
         
         var myCurrency: [String: Market]{
-            var tempDict: [String: Market] = [: ]
+            var tempDict: [String: Market] = [:]
             for currencyItem in currency{
                 tempDict[currencyItem] = allMarket.filter{ $0.market == currencyItem }.first
             }

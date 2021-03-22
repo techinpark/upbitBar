@@ -25,25 +25,25 @@ struct Ticker: Codable {
     /// 최근 거래시각 (KST)
     let tradeTimeKst: String
     /// 최근 거래시간 타임스탬프
-    let tradeTimestamp: Int
+    let tradeTimestamp: Double
     /// 시가
-    let openingPrice: Int
+    let openingPrice: Double
     /// 고가
-    let highPrice: Int
+    let highPrice: Double
     /// 저가
-    let lowPrice: Int
+    let lowPrice: Double
     /// 종가
-    let tradePrice: Int
+    let tradePrice: Double
     /// 전일종가
-    let prevClosingPrice: Int
+    let prevClosingPrice: Double
     /// 변화 (EVENT: 보합, RISE: 상승, FALL: 하락)
     let change: String
     /// 변화액의 절대값
-    let changePrice: Int
+    let changePrice: Double
     /// 변화율의 절대값
     let changeRate: Double
     /// 부호가 있는 변화액
-    let signedChangePrice: Int
+    let signedChangePrice: Double
     /// 부호가 있는 변화율
     let signedChangeRate: Double
     /// 가장최근 거래량
