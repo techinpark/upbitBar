@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7BC7B8626032E0000B2A6DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC7B8526032E0000B2A6DB /* Constants.swift */; };
+		A7BC7B8A26032E3000B2A6DB /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC7B8926032E3000B2A6DB /* Market.swift */; };
 		ED3BF34625F7C67A00F05BB5 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3BF34525F7C67A00F05BB5 /* Attributes.swift */; };
 		ED6E757E25F51FE2006387CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E757D25F51FE2006387CA /* AppDelegate.swift */; };
 		ED6E758225F51FE3006387CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6E758125F51FE3006387CA /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7BC7B8526032E0000B2A6DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A7BC7B8926032E3000B2A6DB /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		ED3BF34525F7C67A00F05BB5 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		ED6E757A25F51FE2006387CA /* upbitBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = upbitBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6E757D25F51FE2006387CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7BC7B8426032DF800B2A6DB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A7BC7B8526032E0000B2A6DB /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		ED6E757125F51FE2006387CA = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		ED6E757C25F51FE2006387CA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A7BC7B8426032DF800B2A6DB /* Constants */,
 				ED6E771A25F677D5006387CA /* Utils */,
 				ED6E75A025F52DCF006387CA /* Networking */,
 				ED6E759B25F52BD1006387CA /* Models */,
@@ -106,6 +119,7 @@
 				ED6E75A925F5325A006387CA /* Ticker.swift */,
 				ED6E75AC25F54617006387CA /* Cryptocurrency.swift */,
 				ED6E772C25F689E0006387CA /* RefreshInterval.swift */,
+				A7BC7B8926032E3000B2A6DB /* Market.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,7 +272,9 @@
 				ED6E772A25F6836E006387CA /* Notifications.swift in Sources */,
 				ED6E75AA25F5325A006387CA /* Ticker.swift in Sources */,
 				ED6E75B425F54B6C006387CA /* UpbitAPI.swift in Sources */,
+				A7BC7B8626032E0000B2A6DB /* Constants.swift in Sources */,
 				ED6E75A225F52DE1006387CA /* UpbitServices.swift in Sources */,
+				A7BC7B8A26032E3000B2A6DB /* Market.swift in Sources */,
 				ED6E774125F68F14006387CA /* Localized.swift in Sources */,
 				ED6E772125F67802006387CA /* UserInfo.swift in Sources */,
 				ED3BF34625F7C67A00F05BB5 /* Attributes.swift in Sources */,

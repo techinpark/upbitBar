@@ -190,7 +190,7 @@ class SettingViewController: NSViewController {
     }
     
     @objc func onHelpTap() {
-        let url = URL(string: "https://www.notion.so/UpbitBar-6b9cc7ab41474a9eaa5e9c69addd59e3")!
+        let url = URL(string: Constants.notionURL.rawValue)!
         NSWorkspace.shared.open(url)
     }
     

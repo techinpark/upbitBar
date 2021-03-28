@@ -25,7 +25,7 @@ struct Ticker: Codable {
     /// 최근 거래시각 (KST)
     let tradeTimeKst: String
     /// 최근 거래시간 타임스탬프
-    let tradeTimestamp: Int
+    let tradeTimestamp: Double
     /// 시가
     let openingPrice: Double
     /// 고가

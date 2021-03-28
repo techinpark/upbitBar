@@ -21,66 +21,72 @@ class UpbitServices {
     func generateJWTToken() -> String? {
         
         var jwtc = JWTComponents()
-        let secretKey = keys.secretToken.data(using: .utf8)!
+        guard let secretKey = keys.secretToken.data(using: .utf8) else { return nil }
         let accessToken: String = keys.accessToken
         let nonce: String =  UUID().uuidString
                 
         do {
-            try jwtc.setValue(accessToken, forClaim: "access_key")
-            try jwtc.setValue(nonce, forClaim: "nonce")
-            try jwtc.setValue("HS256", forHeaderParameter: .alg)
+            try jwtc.setValue(accessToken, forClaim: ServicesKey.accessKey.rawValue)
+            try jwtc.setValue(nonce, forClaim: ServicesKey.nonce.rawValue)
+            try jwtc.setValue(ServicesKey.hs256.rawValue, forHeaderParameter: .alg)
             try jwtc.sign(withKey: secretKey)
             
-            if let bearer = jwtc.jwt {
-                return "Bearer \(bearer)"
-            }
+            guard let bearer = jwtc.jwt else { return nil }
+            return "Bearer \(bearer)"
+            
         } catch {
             return nil
         }
-        
-        return nil
     }
     
     /// 나의 자산을 조회합니다
     func getBalances() -> [CryptoAsset]? {
+        guard let bearerToken = generateJWTToken() else { return nil }
+        let targetURL = UpbitAPI.balances.targetURL
+        let headers: [String: String] = [Constants.authorization.rawValue: bearerToken]
+        let response = Just.get(targetURL, headers: headers)
+        guard let jsonData = response.content else { return nil }
         
-        if let bearerToken = generateJWTToken() {
-            let targetURL = UpbitAPI.balances.targetURL
-            let headers: [String: String] = ["Authorization": bearerToken]
-            let response = Just.get(targetURL, headers: headers)
-            let jsonData = response.content!
-            
-            do {
-                let result = try JSONDecoder().decode([CryptoAsset].self, from: jsonData)
-                return result
-            } catch {
-                NotificationCenter.default.post(name: .neededTokenSetting, object: nil)
-                print(error)
-                return nil
-            }
+        do {
+            return try JSONDecoder().decode([CryptoAsset].self, from: jsonData)
+        } catch {
+            NotificationCenter.default.post(name: .neededTokenSetting, object: nil)
+            print(error)
+            return nil
         }
-        
-        return nil
     }
     
     /// 현재가를 조회합니다
     func getTicker(markets: String) -> [Ticker]? {
+        guard let bearerToken = generateJWTToken() else { return nil }
+        let targetURL = "\(UpbitAPI.ticker.targetURL)?markets=\(markets)"
+        print(targetURL)
         
-        if let bearerToken = generateJWTToken() {
-            let targetURL = "\(UpbitAPI.ticker.targetURL)?markets=\(markets)"
-            print(targetURL)
-            let headers: [String: String] = ["Authorization": bearerToken]
-            let response = Just.get(targetURL, headers: headers)
-            let jsonData = response.content!
-          do {
-            let result = try JSONDecoder().decode([Ticker].self, from: jsonData)
-            return result
-          } catch let error {
-            print(error.localizedDescription)
-          }
-            
+        let headers: [String: String] = [Constants.authorization.rawValue: bearerToken]
+        let response = Just.get(targetURL, headers: headers)
+        
+        guard let jsonData = response.content else { return nil }
+        do {
+            return try JSONDecoder().decode([Ticker].self, from: jsonData)
+        } catch {
+            print("error: \(error.localizedDescription)")
+            print("response: \(String(describing: String(data: jsonData, encoding: .utf8)))")
+            return nil
         }
+    }
+    
+    // 업비트에서 거래 가능한 코인을 조회합니다
+    func getAllMarket() -> [Market]?{
+        let targetURL = "\(UpbitAPI.market.targetURL)all"
+        let response = Just.get(targetURL)
         
-        return nil
+        guard let jsonData = response.content else { return nil }
+        do {
+            return try JSONDecoder().decode([Market].self, from: jsonData)
+        } catch {
+            print("error: \(error.localizedDescription)")
+            print("response: \(String(describing: String(data: jsonData, encoding: .utf8)))")
+            return nil
+        }
     }
 }
