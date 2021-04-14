@@ -148,12 +148,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     private func getAllBalances() {
-        guard let balances = UpbitServices.shared.getBalances() else { return }
-       
-        let currency: [String] = balances.map {  return "\($0.unitCurrency)-\($0.currency)" }
-                                        .filter { false == $0.contains("KRW-KRW") }
-                                        .filter { false == $0.contains("KRW-LUNA") }
+        guard let balances = UpbitServices.shared.getBalances(),
+              let allMarket = UpbitServices.shared.getAllMarket() else { return }
         
+        let availableMarkets = allMarket.compactMap{ $0.market }
+        let currency: [String] = balances
+            .map { "\($0.unitCurrency)-\($0.currency)" }
+            .filter{ market -> Bool in availableMarkets.filter{ $0 == market }.first != nil }
+        
+        var myCurrency: [String: Market] {
+            var tempDict: [String: Market] = [:]
+            for currencyItem in currency {
+                tempDict[currencyItem] = allMarket.filter{ $0.market == currencyItem }.first
+            }
+            return tempDict
+        }
+
         let markets = currency.joined(separator: ",")
         guard let tickers = UpbitServices.shared.getTicker(markets: markets) else { return }
         
@@ -185,7 +195,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     totalBalances.append(totalPrice)
                     
                     let totalString = self.convertCurrency(prefix:"", money: round(totalPrice))
-                    let title: String = "\(emoji) \(balance.currency) - \(totalString) (\(percent.rounded())%)"
+                    
+                    let currentCurrency = myCurrency[currentMarket]
+                    let currencyName = currentCurrency?.koreanName ?? currentCurrency?.englishName ?? ""
+                    
+                    let title: String = "\(emoji) \(currencyName)(\(balance.currency)) - \(totalString) (\(percent.rounded())%)"
                     
                     let menuItem = NSMenuItem().then {
                         $0.isEnabled = true
