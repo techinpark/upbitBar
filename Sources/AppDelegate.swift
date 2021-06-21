@@ -45,12 +45,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         $0.keyEquivalent = "q"
     }
     
+    private var settingWindow: NSWindow!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         NotificationCenter.default.addObserver(self, selector: #selector(onDidNeedTokenSetting(_:)), name: .neededTokenSetting, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onDidNeedRefresh(_:)), name: .neededRefresh, object: nil)
         
         setupUI()
+        setupSettingWindow()
         getAllBalances()
         setupRefreshTimer()
     }
@@ -71,6 +74,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         self.statusItem?.button?.title = "Loading ... "
         
+    }
+    
+    private func setupSettingWindow() {
+        let windowSize = NSSize(width: 480, height: 240)
+        let screenSize = NSScreen.main?.frame.size ?? .zero
+        let rect = NSMakeRect(screenSize.width/2 - windowSize.width/2, screenSize.height/2 - windowSize.height/2, windowSize.width, windowSize.height)
+        settingWindow = NSWindow(contentRect: rect, styleMask: [.miniaturizable, .closable, .titled], backing: .buffered, defer: false)
+        settingWindow.title = Localized.settingTitle
+        settingWindow.contentViewController = SettingViewController()
+        settingWindow.delegate = self
     }
     
     @objc func onDidNeedTokenSetting(_ notification: Notification) {
@@ -125,18 +138,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     
     private func showSettingAlert() {
-        
-        var window = NSWindow()
-        let windowSize = NSSize(width: 480, height: 240)
-        let screenSize = NSScreen.main?.frame.size ?? .zero
-        let rect = NSMakeRect(screenSize.width/2 - windowSize.width/2, screenSize.height/2 - windowSize.height/2, windowSize.width, windowSize.height)
-        window = NSWindow(contentRect: rect, styleMask: [.miniaturizable, .closable, .titled], backing: .buffered, defer: false)
-        window.title = Localized.settingTitle
-        window.contentViewController = SettingViewController()
-        
-        NSApp.runModal(for: window)
+        NSApp.runModal(for: settingWindow)
         NSApp.activate(ignoringOtherApps: true)
-        window.orderOut(self)
+        settingWindow.orderOut(self)
     }
     
     private func removeAllItems() {
@@ -242,3 +246,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
 }
 
+
+
+extension AppDelegate: NSWindowDelegate {
+    func windowWillClose(_ notification: Notification) {
+        NSApp.stopModal()
+    }
+}
